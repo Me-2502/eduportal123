@@ -13,8 +13,11 @@ import Settings from './Settings.jsx';
 import LoginForm from './Loginform.jsx';
 import Marks from './Marks.jsx';
 import Give_marks from './Give_marks.jsx';
+import dotenv from 'dotenv';
 
 function App() {
+  dotenv.config();
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
   const [activeSection, setActiveSection] = useState('Dashboard');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [logger, setLogger] = useState('');
@@ -30,7 +33,7 @@ function App() {
     setPassword(password);
     try {
         if(logger == 'Student')
-          setResponse(await axios.post('http://localhost:5000/api/auth/login', { username, password }))
+          setResponse(await axios.post(API_URL + '/api/auth/login', { username, password }))
         else
           setResponse(await axios.post('http://localhost:5000/api/auth/faculty_login', { username, password }))
         if (response.data) {
