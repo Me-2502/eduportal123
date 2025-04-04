@@ -13,10 +13,8 @@ import Settings from './Settings.jsx';
 import LoginForm from './Loginform.jsx';
 import Marks from './Marks.jsx';
 import Give_marks from './Give_marks.jsx';
-import dotenv from 'dotenv';
 
 function App() {
-  dotenv.config();
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
   const [activeSection, setActiveSection] = useState('Dashboard');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
