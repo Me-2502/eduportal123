@@ -15,7 +15,7 @@ import Marks from './Marks.jsx';
 import Give_marks from './Give_marks.jsx';
 
 function App() {
-  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  const API_URL = process.env.REACT_APP_API_URL;
   const [activeSection, setActiveSection] = useState('Dashboard');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [logger, setLogger] = useState('');
